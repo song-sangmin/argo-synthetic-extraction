@@ -19,9 +19,9 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 
-default_index = '/global/cfs/cdirs/m4839/sangsong/crusoe_carbon_validation/socatINDEX_syn_colocation.csv'
+default_index = '/global/cfs/cdirs/m4839/sangsong/github-repos/argo-synthetic-extraction/outputs/socatINDEX_syn_colocation.csv'  # build_socatINDEX.py output
 default_data_path = '/global/cfs/cdirs/m4839/ktchris/Synthetic_Argo_Dataset/'
-default_outpath = '/global/cfs/cdirs/m4839/sangsong/crusoe_carbon_validation/'
+default_outpath = '/global/cfs/cdirs/m4839/sangsong/github-repos/argo-synthetic-extraction/outputs/'
 default_filename = 'synSOCAT_matches.nc'
 default_levels = [0, 1, 2]
 

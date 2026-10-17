@@ -29,9 +29,9 @@ import pandas as pd
 import xarray as xr
 
 ################# User options
-working_dir = '/global/cfs/cdirs/m4839/sangsong/crusoe_carbon_validation/'   # working files
+working_dir = '/global/cfs/cdirs/m4839/sangsong/github-repos/argo-synthetic-extraction/'   # working files
 syn_dir = '/global/cfs/cdirs/m4839/ktchris/Synthetic_Argo_Dataset/'         # 4-hourly synthetic data
-default_out = working_dir + 'socatINDEX_syn_colocation.csv'                  # extract_SOCAT.py default_index
+default_out = working_dir + 'outputs/socatINDEX_syn_colocation.csv'                  # extract_SOCAT.py default_index
 records_per_year = 2190     # 4-hourly data, model has no leap years
 #################
 
