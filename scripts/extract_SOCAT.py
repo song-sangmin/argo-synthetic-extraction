@@ -1,10 +1,11 @@
-"""Extract the synthetic profile matched to each SOCAT sample.
+"""
+Extract the synthetic profile matched to each SOCAT sample.
 
-Reads the SOCAT index csv (one row per sample, with 'sample_datetag', 'year',
-'record_index' and 'nParticles_index' columns from build_socatINDEX.py, formerly
-4.4_synthetic_SOCAT_prep.ipynb). For each year, pulls every sample's matched
-(record, nParticles) profile from Synthetic_Argo_Data_<yr>.nc, then writes one
-file with dimensions (sample_datetag, nVertLevels).
+Reads in the SOCAT index from build_socatINDEX.py (includes sample_datetag identifier), 
+which stores the index of the nearest synthetic particle for each sample.
+
+For each year, pull every sample's matched (record, nParticles) profile from 
+Synthetic_Argo_Data_<yr>.nc, then write one file with dimensions (sample_datetag, nVertLevels).
 Model time of each sample is in time(sample_datetag).
 
 Usage (normally called by extract_SOCAT.sbatch):

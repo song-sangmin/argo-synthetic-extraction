@@ -3,8 +3,8 @@
 
 Current files use working_dir = '/global/cfs/cdirs/m4839/sangsong/crusoe_carbon_validation/'
 
-The file 'ar_index_global_prof.txt' contains the date and time of all float profiles, downloaded from Coriolis.
-
+The file 'ar_index_global_prof.txt' contains the date and time of all float profiles, downloaded from Coriolis. 
+Change "default_global_index" in build_realworldINDEX.py to where you have this saved. 
 
 ## To run once during setup: 
 
@@ -75,13 +75,11 @@ sbatch merge_synargo_years.sbatch --path '/global/cfs/cdirs/m4839/sangsong/cruso
 
 ## Synthetic SOCAT: colocate SOCAT samples to synthetic floats, then extract
 
-1. Locally, export the SOCAT samples (one row per sample: sample_datetag, datetime, latitude,
-   longitude) and upload the csv to the working directory, e.g.
-   `socat_trainval_samples_2014-2023_acc<date>.csv` (SOCAT rows of the P2 combined trainval file).
-2. Use `build_socatINDEX.py` to match each sample to the nearest synthetic particle at its model
-   time step. It writes `socatINDEX_syn_colocation.csv`, the default `--index` of `extract_SOCAT.py`.
-   (Reads only the records with samples from each Synthetic_Argo_Data_<yr>.nc.)
-3. Use `extract_SOCAT.sbatch` to pull the matched synthetic profiles.
+Locally export the SOCAT samples and upload the csv to the working directory.
+
+Use `build_socatINDEX.py` to match each sample to the nearest synthetic particle from the 4-hourly data. Default output is `socatINDEX_syn_colocation.csv`, or set `--index` in `extract_SOCAT.py`.
+
+Use `extract_SOCAT.sbatch` to pull the matched synthetic profiles.
 
 ```
 cd /global/cfs/cdirs/m4839/sangsong/crusoe_carbon_validation/

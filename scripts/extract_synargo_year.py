@@ -22,10 +22,13 @@ import numpy as np
 import pandas as pd
 import xarray as xr
 
+######### User options ##########
 
 default_data_path = '/global/cfs/cdirs/m4839/ktchris/Synthetic_Argo_Dataset/'
 default_outpath = '/global/cfs/cdirs/m4839/sangsong/crusoe_carbon_validation/' + 'synArgo_59record_2000-2023deployments/'
 default_index = 'float_deployment_realworld_annualrecords.parquet'
+
+##################################
 
 def build_profile_indices(yearINDEX, yrcol):
     """Record and particle index for every (fnum, profnum) slot.

@@ -17,26 +17,27 @@ import xarray as xr
 from tqdm import tqdm
 import os
 
-################# User options
+########## User options ##########
+
 record_interval = int(59)                  # 60 for exactly 10 days 
 extract_years = range(2014, 2024)          # study period to extract
 search_years = [2000, 2023]                # add buffer before study period to search deployments
 
-### Choose folder 
+# Choose folder 
 save_folder = '/global/cfs/cdirs/m4839/sangsong/crusoe_carbon_validation/' + f'synArgo_{record_interval}record_{search_years[0]}-{search_years[1]}deployments/'
 
-default_colocation = 'float_deployment_realworld_colocation.csv'
-default_annualrecords = 'float_deployment_realworld_annualrecords.parquet'
+default_colocation = 'float_deployment_realworld_colocation.csv'            # intermediary output file
+default_annualrecords = 'float_deployment_realworld_annualrecords.parquet'  # final output file
 
-### Optional to change
+# Optional to change
 records_per_year = 2190     # 4-hourly data, model has no leap years
 d_hours = 4                 # hourly interval for full data
 
-working_dir = '/global/cfs/cdirs/m4839/sangsong/crusoe_carbon_validation/'    # working files
+working_dir = '/global/cfs/cdirs/m4839/sangsong/crusoe_carbon_validation/'   # working files
 syn_dir = '/global/cfs/cdirs/m4839/ktchris/Synthetic_Argo_Dataset/'          # 4-hourly synthetic data
 default_global_index = working_dir + 'ar_index_global_prof.txt'
 
-#################
+#####################################
 
 def replace_year(dt, year=2010):
     # Function to replace the year, which helps in avoiding leap years
